@@ -22,19 +22,13 @@ const swiper = new Swiper(".slider", {
     // when window width is >= 640px
     768: {
       slidesPerView: 2,
-      spaceBetween: 40,
+      spaceBetween: 30,
     },
     1200: {
       slidesPerView: 3,
-      spaceBetween: 40,
+      spaceBetween: 20,
     },
   },
-
-  // Navigation arrows
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
 });
 const swiperPrev = document.querySelector(".swiper-button_prev");
 const swiperNext = document.querySelector(".swiper-button_next");
@@ -46,27 +40,28 @@ swiperNext.addEventListener("click", () => {
 });
 
 // функция работы гамбургера
-function ham(){
-  const ham=document.querySelector('.hamburger');
-  const menu=document.querySelector('.menu');
-  const body=document.querySelector('body');
-  function toggleMenu(){
-      ham.classList.toggle('active');
-      menu.classList.toggle('is-active');    
-      body.classList.toggle('locked'); 
+function ham() {
+  const ham = document.querySelector(".hamburger");
+  const menu = document.querySelector(".menu");
+  const body = document.querySelector("body");
+  function toggleMenu() {
+    ham.classList.toggle("active");
+    menu.classList.toggle("is-active");
+    // body.classList.toggle('locked');
   }
-  ham.addEventListener('click',function(e){
-  e.preventDefault();  
-  toggleMenu();
-  })  
-  menu.addEventListener('click',function(e){  
-    let target=e.target;
-    if (target.className==='menu__link') {    
+  ham.addEventListener("click", function (e) {
+    e.preventDefault();
+    toggleMenu();
+  });
+  menu.addEventListener("click", function (e) {
+    let target = e.target;
+    if (target.className === "menu__link") {
       toggleMenu();
-    }       
-  })    
-  };
-  ham();
+    }
+  });
+}
+ham();
+
 // Функция работы модального окна карточки
 function toggleModalCard(modalWindow, openButton, closeButton) {
   const openBtns = document.querySelectorAll(openButton);
@@ -121,6 +116,7 @@ function toggleModal(modalWindow, openButton, closeButton) {
         e.preventDefault();
         modal.classList.add("active");
         overlay.classList.add("active");
+        window.scrollTo({ top: 0 });
       });
     });
     if (closeBtn) {
