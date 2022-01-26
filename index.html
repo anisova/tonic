@@ -418,16 +418,21 @@
     </div>
   </div>
 </div>
+<div class="overlay"></div>
 
-<div class="modal modal-basket">
-  <div class="modal__container modal-basket__container">
+<div class="modal-basket">
+  <div class="modal-basket__container">
     <div class="btn-close">
       <img src="./img/close.svg" alt="" class="btn-close__pic" />
     </div>
-    <div class="modal__content modal-basket__content basket">
+    <div class="modal-basket__content basket">
       <h3 class="h3 h3_basket">basket</h3>
       <div class="basket__cards"></div>
-      <div class="basket-card__total-price">40</div>
+      <div class="basket__total-block">
+        <p class="basket__total">40</p>
+        <p class="dollar">&#36;</p>
+      </div>
+
       <button class="btn btn_basket-card">BUY NOW</button>
     </div>
   </div>
@@ -439,9 +444,12 @@
           <img class="basket-card__pic" src="" alt="" />
         </div>
         <div class="basket-card__block">
+
           <h3 class="h3 h3_basket-card"></h3>
+          <div class="basket-card__price-block">
           <p class="basket-card__price"></p><p class='dollar'>&#36;</p>
         </div>
+      </div>
       </div>
     </script>
     <!------------------------------------------------------------------------->

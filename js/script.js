@@ -109,35 +109,32 @@ function toggleModalCard(modalWindow, openButton, closeButton) {
     });
   }
 }
-// Функция работы модального окна карточки
+// Функция работы модального окна корзины
 function toggleModal(modalWindow, openButton, closeButton) {
-  const openBtns = document.querySelectorAll(openButton);
-  const modal = document.querySelector(modalWindow);
-  const closeBtn = modal.querySelector(closeButton);
+  const openBtns = document.querySelectorAll(openButton),
+    modal = document.querySelector(modalWindow),
+    closeBtn = modal.querySelector(closeButton),
+    overlay = document.querySelector(".overlay");
   if (modal) {
     openBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        let paddingoffset =
-          window.innerWidth - document.body.offsetWidth + "px";
         e.preventDefault();
-        document.body.style.overflow = "hidden";
-        document.body.style.paddingRight = paddingoffset;
         modal.classList.add("active");
+        overlay.classList.add("active");
       });
     });
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
-        document.body.style.overflow = "";
-        document.body.style.paddingRight = "";
         modal.classList.remove("active");
-        addCard(modal);
+        overlay.classList.remove("active");
       });
     }
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
+    overlay.addEventListener("click", (e) => {
+      if (e.target == overlay) {
         document.body.style.overflow = "";
         document.body.style.paddingRight = "";
         modal.classList.remove("active");
+        overlay.classList.remove("active");
       }
     });
   }
@@ -151,6 +148,7 @@ toggleModalCard(".modal-product5", ".slide__link5", ".btn_product-card");
 toggleModalCard(".modal-product6", ".slide__link6", ".btn_product-card");
 toggleModalCard(".modal-product7", ".slide__link7", ".btn_product-card");
 toggleModalCard(".modal-product8", ".slide__link8", ".btn_product-card");
+
 function addCard(modal) {
   let wrapper = document.querySelector(".basket__cards"); //выбираем обертку карточек в корзине
   const title = modal.querySelector(".h3").textContent, //получаем название продукта
@@ -168,5 +166,5 @@ function addCard(modal) {
   wrapper.appendChild(fragment);
 }
 // function total(modal) {
-//   totalPrice = document.querySelector(".basket-card__total-price");
+//   totalPrice = document.querySelector(".basket__total");
 // }
