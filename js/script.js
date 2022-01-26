@@ -117,6 +117,7 @@ function toggleModal(modalWindow, openButton, closeButton) {
         modal.classList.add("active");
         overlay.classList.add("active");
         window.scrollTo({ top: 0 });
+        total(modal);
       });
     });
     if (closeBtn) {
@@ -161,6 +162,13 @@ function addCard(modal) {
   fragment.querySelector(".basket-card__price").textContent = price;
   wrapper.appendChild(fragment);
 }
-// function total(modal) {
-//   totalPrice = document.querySelector(".basket__total");
-// }
+function total(modalBasket) {
+  totalPrice = document.querySelector(".basket__total");
+  prices = modalBasket.querySelectorAll(".basket-card__price");
+  let total = 0;
+  prices.forEach((element) => {
+    value = parseFloat(element.innerHTML);
+    total = total + value;
+  });
+  totalPrice.innerHTML = total;
+}

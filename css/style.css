@@ -1487,6 +1487,7 @@ img {
   .about__left {
     width: 100%;
     margin-bottom: 20px;
+    height: 300px;
   }
 
   .about__right {
@@ -1652,6 +1653,10 @@ img {
     text-transform: uppercase;
   }
 
+  .h2_about {
+    margin-top: 30px;
+  }
+
   .h3_modal-product {
     margin-bottom: 0;
   }
@@ -1696,6 +1701,11 @@ img {
 
   .phone {
     letter-spacing: 3px;
+  }
+
+  .anchor {
+    padding-top: 60px;
+    margin-top: -60px;
   }
 }
 
