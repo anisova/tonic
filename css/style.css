@@ -189,6 +189,7 @@
   background-color: white;
   position: relative;
   width: 1143px;
+  overflow: auto;
   padding-left: 90px;
   padding-top: 94px;
   padding-bottom: 147px;
@@ -281,6 +282,36 @@
 
 .modal-product__contant {
   overflow: auto;
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.btn-close__pic {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0.6;
+  fill: black;
+  width: 30px;
+  height: 30px;
+}
+
+.btn-close__pic:hover {
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
 }
 
 .hamburger {
@@ -910,6 +941,18 @@ img {
       );
   }
 
+  .product-card__pic {
+    width: calc(
+        300px + 100* ((100vw - 320px) /1120)
+      );
+  }
+
+  .product-card__pic {
+    height: calc(
+        300px + 100* ((100vw - 320px) /1120)
+      );
+  }
+
   .wrapper {
     padding-left: calc(
         10px + 14* ((100vw - 320px) /1120)
@@ -943,6 +986,12 @@ img {
   .h2_left {
     margin-top: calc(
         30px + 42* ((100vw - 320px) /1120)
+      );
+  }
+
+  .h3 {
+    font-size: calc(
+        26px + 22* ((100vw - 320px) /1120)
       );
   }
 
@@ -1165,6 +1214,11 @@ img {
     background-position-y: 150px;
   }
 
+  .modal__container {
+    width: 80vw;
+    max-height: 90vh;
+  }
+
   .wrapper {
     max-width: 100%;
   }
@@ -1189,6 +1243,18 @@ img {
 
   .about__right {
     width: 90%;
+  }
+
+  .modal__container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .product-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .hamburger {
