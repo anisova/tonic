@@ -284,6 +284,7 @@
 
 .modal-product__content {
   overflow: auto;
+  max-height: 100vh;
 }
 
 .btn-close {
@@ -1304,6 +1305,7 @@ img {
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
+    padding-bottom: 0;
   }
 
   .product-card {
@@ -1417,6 +1419,10 @@ img {
     width: auto;
     color: #5ca593;
     text-transform: uppercase;
+  }
+
+  .h3_modal-product {
+    margin-bottom: 0;
   }
 
   .btn_product-card {
