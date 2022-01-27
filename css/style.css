@@ -185,6 +185,8 @@
   background-color: white;
   position: relative;
   width: 1143px;
+  overflow: auto;
+  max-height: 100vh;
   padding-left: 90px;
   padding-top: 94px;
   padding-bottom: 147px;
@@ -240,11 +242,6 @@
   line-height: 42px;
   font-size: 36px;
   letter-spacing: 0.25em;
-}
-
-.modal-product__content {
-  overflow: auto;
-  max-height: 100vh;
 }
 
 .btn-close {
@@ -401,57 +398,6 @@
 .basket-card__block {
   margin-left: 50px;
   text-align: right;
-}
-
-.hamburger {
-  margin: 20px;
-  display: none;
-}
-
-.hamburger.active .hamburger__link {
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-}
-
-.hamburger.active::before {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  top: 11px;
-}
-
-.hamburger.active::after {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  bottom: 11px;
-}
-
-.header__container {
-  display: none;
-}
-
-.menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: relative;
-}
-
-.ham-menu.is-active {
-  top: 0;
-}
-
-body.locked {
-  overflow: hidden;
-  height: 100%;
 }
 
 * {
@@ -952,6 +898,81 @@ img {
   height: 386px;
 }
 
+.hamburger {
+  margin: 20px;
+  display: none;
+}
+
+.hamburger.active .hamburger__link {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.hamburger.active::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 11px;
+}
+
+.hamburger.active::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 11px;
+}
+
+.header__container {
+  display: none;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.ham-menu.is-active {
+  top: 0;
+}
+
+body.locked {
+  overflow: hidden;
+  height: 100%;
+}
+
+.m-logo {
+  text-align: right;
+  margin-right: 20px;
+  width: 50%;
+}
+
+.m-logo__pic {
+  width: 50%;
+}
+
+.top-menu__link_basket {
+  text-transform: lowercase !important;
+  margin: 0 30px;
+}
+
+.ham-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 1440px) {
   .hero {
     padding-bottom: calc(
@@ -1106,6 +1127,12 @@ img {
   .basket__total-block {
     font-size: calc(
         20px + 28* ((100vw - 320px) /1120)
+      );
+  }
+
+  .basket__total-block:before {
+    width: calc(
+        250px + 230* ((100vw - 320px) /1120)
       );
   }
 
@@ -1488,6 +1515,7 @@ img {
     width: 100%;
     margin-bottom: 20px;
     height: 300px;
+    display: none;
   }
 
   .about__right {
@@ -1525,6 +1553,16 @@ img {
     padding-bottom: 0;
   }
 
+  .basket__total-block {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .basket__total-block:before {
+    right: 0;
+    width: 100%;
+  }
+
   .basket-card {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1553,6 +1591,62 @@ img {
     text-align: center;
     margin-left: 0;
     margin-bottom: 50px;
+  }
+
+  .h2_about {
+    margin-top: 30px;
+  }
+
+  .h3_modal-product {
+    margin-bottom: 0;
+  }
+
+  .btn_product-card {
+    margin-left: 0;
+  }
+
+  .btn_basket-card {
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+
+  .gift__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .gift__text-block {
+    width: 100%;
+  }
+
+  .gift__text {
+    margin-top: 120px;
+    margin-bottom: 128px;
+    margin-top: 180px;
+    margin-left: 78px;
+  }
+
+  .gift__cards {
+    width: 60%;
+  }
+
+  .contacts__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .phone {
+    letter-spacing: 3px;
+  }
+
+  .anchor {
+    padding-top: 60px;
+    margin-top: -60px;
   }
 
   .hamburger {
@@ -1596,6 +1690,12 @@ img {
 
   .header__container {
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     left: 0;
     top: 0;
@@ -1605,8 +1705,6 @@ img {
     -o-transition: background-color 1.5s;
     transition: background-color 1.5s;
     background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1651,61 +1749,6 @@ img {
     width: auto;
     color: #5ca593;
     text-transform: uppercase;
-  }
-
-  .h2_about {
-    margin-top: 30px;
-  }
-
-  .h3_modal-product {
-    margin-bottom: 0;
-  }
-
-  .btn_product-card {
-    margin-left: 0;
-  }
-
-  .btn_basket-card {
-    line-height: 1;
-    margin-bottom: 30px;
-  }
-
-  .gift__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .gift__text-block {
-    width: 100%;
-  }
-
-  .gift__text {
-    margin-top: 120px;
-    margin-bottom: 128px;
-    margin-top: 180px;
-    margin-left: 78px;
-  }
-
-  .gift__cards {
-    width: 60%;
-  }
-
-  .contacts__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .phone {
-    letter-spacing: 3px;
-  }
-
-  .anchor {
-    padding-top: 60px;
-    margin-top: -60px;
   }
 }
 
@@ -1760,5 +1803,9 @@ img {
     background: url(../img/m_bg.png) no-repeat bottom right;
     background-size: 58%;
     background-position-y: 80px;
+  }
+
+  .m-logo__pic {
+    width: 90%;
   }
 }
